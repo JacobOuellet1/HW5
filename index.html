@@ -1,0 +1,90 @@
+<!--
+File: index.html
+GUI Assignment: Homework 4
+Jacob Ouellet, UMass Lowell Computer Science, jacob_ouellet@student.uml.edu
+Copyright (c) 2021 by Jacob Ouellet. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by Jacob Ouellet on Aug 5, 2021 at 7:06 PM
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scrabble</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="js/script.js"></script>    <!-- javascript reference-->
+  </head>
+  <body>
+    <header>
+      <h1>Scrabble</h1>
+      <form id="wordValidate">
+        <label for="score">Score:</label>    <!-- get column start index-->
+        <input type="text" id="score" name="score" value='0' readonly>
+        <label for="word">Word:</label>    <!-- get column start index-->
+        <input type="text" id="word" name="word" readonly>
+        <label for="tiles_left">Tiles Left:</label>    <!-- get column start index-->
+        <input type="text" id="tiles_left" name="tiles_left" readonly>
+      </form>
+      <hr>
+    </header>
+    <div id="game_space">
+      <div class="drop_box"></div>
+      <div class="drop_box"></div>
+      <div class="drop_box"></div>
+      <div class="drop_box"></div>
+      <div class="drop_box"></div>
+      <div class="drop_box"></div>
+      <div class="drop_box"></div>
+    </div>
+    <div id="sub_btn">
+      <button id='check_word'>submit word</button>
+    </div>
+    <div id="shelf">
+      <div class="shelf" data-double-word ="false" data-double-letter="false"></div>
+      <div class="shelf" data-double-word ="false" data-double-letter="false"></div>
+      <div class="shelf" data-double-word ="true" data-double-letter="false"></div>
+      <div class="shelf" data-double-word ="false" data-double-letter="false"></div>
+      <div class="shelf" data-double-word ="false" data-double-letter="false"></div>
+      <div class="shelf" data-double-word ="false" data-double-letter="false"></div>
+      <div class="shelf" data-double-word ="false" data-double-letter="true"></div>
+    </div>
+    <div class="block">
+      <div id="choice_container">
+        <ul>
+          <li class="blank_choice"><button id="A_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_A.jpg"></button></li>
+          <li class="blank_choice"><button id="B_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_B.jpg"></button></li>
+          <li class="blank_choice"><button id="C_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_C.jpg"></button></li>
+          <li class="blank_choice"><button id="D_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_D.jpg"></button></li>
+          <li class="blank_choice"><button id="E_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_E.jpg"></button></li>
+          <li class="blank_choice"><button id="F_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_F.jpg"></button></li>
+          <li class="blank_choice"><button id="G_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_G.jpg"></button></li>
+          <li class="blank_choice"><button id="H_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_H.jpg"></button></li>
+          <li class="blank_choice"><button id="I_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_I.jpg"></button></li>
+          <li class="blank_choice"><button id="J_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_J.jpg"></button></li>
+          <li class="blank_choice"><button id="K_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_K.jpg"></button></li>
+          <li class="blank_choice"><button id="L_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_L.jpg"></button></li>
+          <li class="blank_choice"><button id="M_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_M.jpg"></button></li>
+          <li class="blank_choice"><button id="N_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_N.jpg"></button></li>
+          <li class="blank_choice"><button id="O_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_O.jpg"></button></li>
+          <li class="blank_choice"><button id="P_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_P.jpg"></button></li>
+          <li class="blank_choice"><button id="Q_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_Q.jpg"></button></li>
+          <li class="blank_choice"><button id="R_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_R.jpg"></button></li>
+          <li class="blank_choice"><button id="S_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_S.jpg"></button></li>
+          <li class="blank_choice"><button id="T_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_T.jpg"></button></li>
+          <li class="blank_choice"><button id="U_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_U.jpg"></button></li>
+          <li class="blank_choice"><button id="V_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_V.jpg"></button></li>
+          <li class="blank_choice"><button id="W_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_W.jpg"></button></li>
+          <li class="blank_choice"><button id="X_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_X.jpg"></button></li>
+          <li class="blank_choice"><button id="Y_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_Y.jpg"></button></li>
+          <li class="blank_choice"><button id="Z_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_Z.jpg"></button></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

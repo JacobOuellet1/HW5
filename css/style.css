@@ -1,0 +1,101 @@
+.draggable { width: 90px; height: 80px; padding: 5px; float: left; margin: 0 10px 10px 0; font-size: .9em; }
+.ui-widget-header p, .ui-widget-content p { margin: 0; }
+#snaptarget { height: 140px; }
+
+*{
+   z-index: 1; 
+}
+
+body{
+    background-color:rgb(221, 248, 248);
+}
+#game_space{
+    width: 527px;
+    height: 80px;
+    background-image: url("../img/Scrabble_Board_OneLine.png");
+    margin: auto;
+}
+
+.drop_box{
+    margin-top: 10px;
+    margin-left: 8px;
+    height: 80px;
+    padding: 0;
+    width: 12%;
+    display: inline-block;
+}
+.shelf{
+    height: 80px;
+    width: 13.5%;
+    display: inline-block;
+    margin-top: 25px;
+    padding: 0;
+}
+
+#sub_btn{
+    margin-left: 47.5%;
+    padding-top: 10px;
+}
+
+.drag_box{
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+}
+img{
+    width: 60px;
+    height: 60px;
+}
+#shelf{
+    margin: auto;
+    margin-top: 25px;
+    width: 450px;
+    height: 125px;
+    background-image: url("../img/scrabble-tile-holder-406774_640.png");
+    background-size: 440px;
+    background-repeat: no-repeat;
+}
+label{
+    display: inline-block;
+}
+input[type=text]{
+    display: block;
+    width: 75px;
+    margin-bottom: 20px;
+}
+
+#wordValidate{
+    width: 200px;
+}
+
+/*Error styling*/
+#word-error{
+    color: red;
+}
+.block{
+    background-color: rgba(129, 129, 129, 0.459);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2500px;
+    display: none;
+    z-index: 50;
+}
+li{
+    display: none;
+    margin: auto;
+    z-index: 50;
+}
+#choice_container{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    width:500px;
+    background-color: white;
+}
+
+.ui-button-text {
+    font-size: 10px;
+    padding: 1px 1px 1px 1px; /* Or whatever makes it small enough. */
+}
