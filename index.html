@@ -1,10 +1,10 @@
 <!--
 File: index.html
-GUI Assignment: Homework 4
+GUI Assignment: Homework 5
 Jacob Ouellet, UMass Lowell Computer Science, jacob_ouellet@student.uml.edu
 Copyright (c) 2021 by Jacob Ouellet. All rights reserved. May be freely copied or
 excerpted for educational purposes with credit to the author.
-updated by Jacob Ouellet on Aug 5, 2021 at 7:06 PM
+updated by Jacob Ouellet on Aug 15, 2021 at 4:57 PM
 -->
 
 <!DOCTYPE html>
@@ -24,16 +24,16 @@ updated by Jacob Ouellet on Aug 5, 2021 at 7:06 PM
     <header>
       <h1>Scrabble</h1>
       <form id="wordValidate">
-        <label for="score">Score:</label>    <!-- get column start index-->
+        <label for="score">Score:</label>    <!-- read only input used to display score-->
         <input type="text" id="score" name="score" value='0' readonly>
-        <label for="word">Word:</label>    <!-- get column start index-->
+        <label for="word">Word:</label>    <!-- read only input used to display the word the user submitted-->
         <input type="text" id="word" name="word" readonly>
-        <label for="tiles_left">Tiles Left:</label>    <!-- get column start index-->
+        <label for="tiles_left">Tiles Left:</label>    <!-- read only input used to display the tiles remaining that have yet to be pulled-->
         <input type="text" id="tiles_left" name="tiles_left" readonly>
       </form>
       <hr>
     </header>
-    <div id="game_space">
+    <div id="game_space"> <!-- structure used to hold the drop boxes for each tile space in the game board 7 tile spaces on the board-->
       <div class="drop_box"></div>
       <div class="drop_box"></div>
       <div class="drop_box"></div>
@@ -42,22 +42,28 @@ updated by Jacob Ouellet on Aug 5, 2021 at 7:06 PM
       <div class="drop_box"></div>
       <div class="drop_box"></div>
     </div>
-    <div id="sub_btn">
+    <div id="sub_btn">  <!-- button used to do text validations on the word and either reject the word or accept and dispense new letters if any remain-->
       <button id='check_word'>submit word</button>
     </div>
-    <div id="shelf">
-      <div class="shelf" data-double-word ="false" data-double-letter="false"></div>
-      <div class="shelf" data-double-word ="false" data-double-letter="false"></div>
-      <div class="shelf" data-double-word ="true" data-double-letter="false"></div>
-      <div class="shelf" data-double-word ="false" data-double-letter="false"></div>
-      <div class="shelf" data-double-word ="false" data-double-letter="false"></div>
-      <div class="shelf" data-double-word ="false" data-double-letter="false"></div>
-      <div class="shelf" data-double-word ="false" data-double-letter="true"></div>
+    <div id="repick_btn"> <!-- button used to do replace all the tiles in the users shelf and do another random pull of tiles from the tiles that remain-->
+      <button id='repick_letters'>re-pick tiles</button>
     </div>
-    <div class="block">
+    <div id="restart_btn"> <!-- button used to do restart the game-->
+      <button id='restart'>restart</button>
+    </div>
+    <div id="shelf"> <!-- structure used to hold the shelf boxes for each tile. This shelf holds the unplayed tiles-->
+      <div class="shelf"></div>
+      <div class="shelf"></div>
+      <div class="shelf"></div>
+      <div class="shelf"></div>
+      <div class="shelf"></div>
+      <div class="shelf"></div>
+      <div class="shelf"></div>
+    </div>
+    <div class="block"> <!-- This block below defines the structure used to prompt the user to select a letter for a blank tile-->
       <div id="choice_container">
         <ul>
-          <li class="blank_choice"><button id="A_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_A.jpg"></button></li>
+          <li class="blank_choice"><button id="A_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_A.jpg"></button></li> <!-- each button corresponds to a possible chocie for the blank-->
           <li class="blank_choice"><button id="B_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_B.jpg"></button></li>
           <li class="blank_choice"><button id="C_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_C.jpg"></button></li>
           <li class="blank_choice"><button id="D_btn"><img src="img/Scrabble_Tiles/Scrabble_Tile_D.jpg"></button></li>

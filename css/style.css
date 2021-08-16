@@ -1,7 +1,13 @@
-.draggable { width: 90px; height: 80px; padding: 5px; float: left; margin: 0 10px 10px 0; font-size: .9em; }
-.ui-widget-header p, .ui-widget-content p { margin: 0; }
-#snaptarget { height: 140px; }
+/*
+File: style.css
+GUI Assignment: Homework 5
+Jacob Ouellet, UMass Lowell Computer Science, jacob_ouellet@student.uml.edu
+Copyright (c) 2021 by Jacob Ouellet. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by Jacob Ouellet on Aug 15, 2021 at 4:57 PM
+*/
 
+/* setting z index low becuase it is used for blocking the rest of the screen when a user is selecting a blank letter*/
 *{
    z-index: 1; 
 }
@@ -9,6 +15,8 @@
 body{
     background-color:rgb(221, 248, 248);
 }
+
+/* set the background image for the game space e.g. game board*/
 #game_space{
     width: 527px;
     height: 80px;
@@ -16,7 +24,8 @@ body{
     margin: auto;
 }
 
-.drop_box{
+/* styling the droppable boxes which are both in the game space and the shelf that holds tiles waiting to play --------*/
+.drop_box{ /* drop boxes sitting in the game board*/
     margin-top: 10px;
     margin-left: 8px;
     height: 80px;
@@ -24,19 +33,22 @@ body{
     width: 12%;
     display: inline-block;
 }
-.shelf{
+.shelf{ /* drop boxes sitting in the shelf*/
     height: 80px;
     width: 13.5%;
     display: inline-block;
     margin-top: 25px;
     padding: 0;
 }
+/*------------------------------------------------------------------------------------------------------------------------*/
 
-#sub_btn{
+/* button styling */
+#sub_btn, #repick_btn, #restart_btn{
     margin-left: 47.5%;
     padding-top: 10px;
 }
 
+/* formatting the drag box and the images that sit inside them----------------*/
 .drag_box{
     height: 60px;
     width: 60px;
@@ -46,6 +58,9 @@ img{
     width: 60px;
     height: 60px;
 }
+/*-----------------------------------------------------------------------------*/
+
+/* styling the shelf and setting its image to tbe the tile holder*/
 #shelf{
     margin: auto;
     margin-top: 25px;
@@ -55,6 +70,8 @@ img{
     background-size: 440px;
     background-repeat: no-repeat;
 }
+
+/* styling the form that displays game information--------------------------------------*/
 label{
     display: inline-block;
 }
@@ -63,15 +80,13 @@ input[type=text]{
     width: 75px;
     margin-bottom: 20px;
 }
-
 #wordValidate{
     width: 200px;
 }
+/* -------------------------------------------------------------------------------------------------*/
 
-/*Error styling*/
-#word-error{
-    color: red;
-}
+/* formatting the blank choice box which pops up when a user places a blank down --------------------------*/
+/*using the block div to blockout whats underneath so the user must choose a letter and not do anything else*/
 .block{
     background-color: rgba(129, 129, 129, 0.459);
     position: fixed;
@@ -94,8 +109,15 @@ li{
     width:500px;
     background-color: white;
 }
+/* -------------------------------------------------------------------------------------------------*/
 
+/* making the jquery buttons smaller*/
 .ui-button-text {
     font-size: 10px;
-    padding: 1px 1px 1px 1px; /* Or whatever makes it small enough. */
+    padding: 1px 1px 1px 1px;
+}
+
+/*Error styling*/
+#word-error{
+    color: red;
 }
